@@ -214,15 +214,8 @@ function startFunc() { setTime();
             }}
 
             function allDone () {
-            //viewHiScore.onclick=function () {
-                   // viewHiScore.innerHTML=localStorage.getItem("score");
-                //}
-            
             document.getElementById('questionDisplay').innerText="All done!"
-            
             var yourScore=document.createElement("p");
-            console.log(score[0]);
-            //console.log(penalties[0]);
             
             function final() {
             var fScore=timeCount.valueOf()-penalties[0].valueOf();
@@ -232,8 +225,6 @@ function startFunc() { setTime();
             }
             final();
 
-            //console.log(score[0]);
-            
             document.getElementById('questions').appendChild(yourScore);
 
             document.getElementById('answers').removeChild(button1);
@@ -241,10 +232,9 @@ function startFunc() { setTime();
             document.getElementById('answers').removeChild(button3);
             document.getElementById('answers').removeChild(button4);
 
-            
             var enterInit=document.createElement("label");
             enterInit. setAttribute("for","text");
-            enterInit.innerHTML="Enter your initials";
+            enterInit.innerHTML="Enter your name";
             document.getElementById('questions').appendChild(enterInit);
 
             var newInput = document.createElement("input");
@@ -254,16 +244,13 @@ function startFunc() { setTime();
             subButton.innerHTML= "Submit";
             document.getElementById('submit-btn').appendChild(subButton);
             
-
             subButton.onclick=function() {
                   
-                lastPage();
+            lastPage();
             }
             
-
             function lastPage () {
-
-                document.getElementById('questionDisplay').innerText="YOUR HIGHEST SCORE";
+            document.getElementById('questionDisplay').innerText="YOUR HIGHEST SCORE";
                 
                 storeScore();
                 function storeScore() {
@@ -301,14 +288,12 @@ function startFunc() { setTime();
                 clearBtn.onclick=function() {
                     yourScore.innerHTML="The highest score has been cleared!"
                     localStorage.setItem("hiSc", 0);
-                    //viewHiScore.innerHTML="View the Highest Score"
-
+                  
             }  }}         
         }
 
 function setTime() {
-    // Sets interval in variable
-    var timerInterval = setInterval(function() {
+   var timerInterval = setInterval(function() {
       timeCount--;
       timerEl.textContent = "Timer : " +timeCount;
 
