@@ -213,7 +213,7 @@ function startFunc() { setTime();
 
             }}
 
-            function allDone () {
+        function allDone () {
             document.getElementById('questionDisplay').innerText="All done!"
             var yourScore=document.createElement("p");
            
@@ -243,36 +243,39 @@ function startFunc() { setTime();
             subButton.innerHTML= "Submit";
             document.getElementById('submit-btn').appendChild(subButton);
             
-            subButton.onclick=function() {
+            subButton.onclick=function lastPage() 
+            {
                   
-            lastPage();
-            }
-            
-            function lastPage () {
+            //lastPage();
+            //}
+
+            //function lastPage()
+            //{
             document.getElementById('questionDisplay').innerText="YOUR HIGHEST SCORE";
                 
                 storeScore();
                 function storeScore() {
                 var y=finalScore[0].valueOf();
                 var z=localStorage.getItem("hiSc").valueOf();
-                
                 if(y>z) {
-                localStorage.setItem("hiSc", y);
-                yourScore.innerHTML=newInput.value+" :   "+y;}
-                else {
-                yourScore.innerHTML=newInput.value+" :   "+z;
-                
-                }}
-                
+                    localStorage.setItem("hiSc", y);
+                    yourScore.innerHTML=newInput.value+" :   "+y;}
+                    else {
+                    yourScore.innerHTML=newInput.value+" :   "+z;
+                    
+                    }} 
+
                 document.getElementById('result').innerText="";
                 document.getElementById('questions').removeChild(enterInit);
                 document.getElementById('questions').removeChild(newInput);
-                 
+                
+                
                 subButton.innerHTML="Try again";
                 clearBtn=document.createElement("button");
                 clearBtn.innerHTML="Clear high score";
                 document.getElementById('questions').appendChild(clearBtn);
                 
+
                 subButton.onclick=function() {
 
                 document.getElementById('questionDisplay').innerText="";
@@ -287,9 +290,9 @@ function startFunc() { setTime();
                 clearBtn.onclick=function() {
                     yourScore.innerHTML="The highest score has been cleared!"
                     localStorage.setItem("hiSc", 0);
-                  
-            }  }}         
-        }
+                }    } 
+}       }         
+        
 
 function setTime() {
    var timerInterval = setInterval(function() {
