@@ -216,16 +216,15 @@ function startFunc() { setTime();
             function allDone () {
             document.getElementById('questionDisplay').innerText="All done!"
             var yourScore=document.createElement("p");
+           
+            //function final() {
             
-            function final() {
             var fScore=timeCount.valueOf()-penalties[0].valueOf();
             yourScore.innerHTML= "YOUR SCORE FOR THIS TIME:  "+fScore;
             finalScore.unshift(fScore);
-            
-            }
-            final();
-
             document.getElementById('questions').appendChild(yourScore);
+            //}
+            //final();
 
             document.getElementById('answers').removeChild(button1);
             document.getElementById('answers').removeChild(button2);
