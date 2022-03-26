@@ -32,7 +32,10 @@ var finalScore=[];
 //}
 
 startEl.addEventListener('click', startFunc);
-function startFunc() { setTime();
+function startFunc() { 
+    //event.preventDault();
+    
+    setTime();
     a=0;
     penalties.unshift(a);
     q=q1;
@@ -55,10 +58,13 @@ function startFunc() { setTime();
     var button4=document.createElement("button");
     button4.innerHTML= answerOptionQ1[3];
     document.getElementById('answers').appendChild(button4);
-    
+
 
     button3.onclick=function()
-    { document.getElementById('result').innerText=c;
+    //button3.addEventListener('click', functionA)
+    //function functionA(event)
+    {
+        document.getElementById('result').innerText=c;
         nextPage1();
     }
         
@@ -88,7 +94,7 @@ function startFunc() { setTime();
         button2.innerHTML= answerOptionQ2[1];
         button3.innerHTML= answerOptionQ2[2];
         button4.innerHTML= answerOptionQ2[3];
-    
+
     button3.onclick=function()
     { document.getElementById('result').innerText=c;
         nextPage2();
@@ -122,7 +128,6 @@ function startFunc() { setTime();
         button2.innerHTML= answerOptionQ3[1];
         button3.innerHTML= answerOptionQ3[2];
         button4.innerHTML= answerOptionQ3[3];
-
         
         button4.onclick=function()
         { document.getElementById('result').innerText=c;
@@ -155,7 +160,7 @@ function startFunc() { setTime();
             button2.innerHTML= answerOptionQ4[1];
             button3.innerHTML= answerOptionQ4[2];
             button4.innerHTML= answerOptionQ4[3];
-
+        
             button3.onclick=function()
             { document.getElementById('result').innerText=c;
                 nextPage4();
@@ -187,6 +192,7 @@ function startFunc() { setTime();
                 button2.innerHTML= answerOptionQ5[1];
                 button3.innerHTML= answerOptionQ5[2];
                 button4.innerHTML= answerOptionQ5[3];
+            
 
             button4.onclick=function()
             { document.getElementById('result').innerText=c;
@@ -240,9 +246,10 @@ function startFunc() { setTime();
             document.getElementById("questions").appendChild(newInput);
 
             var subButton=document.createElement("button");
-            subButton.innerHTML= "Submit";
+            subButton.innerHTML= "Confirm";
             document.getElementById('submit-btn').appendChild(subButton);
-            
+        
+
             subButton.onclick=function lastPage() 
             {
                   
@@ -274,7 +281,7 @@ function startFunc() { setTime();
                 clearBtn=document.createElement("button");
                 clearBtn.innerHTML="Clear high score";
                 document.getElementById('questions').appendChild(clearBtn);
-                
+            
 
                 subButton.onclick=function() {
 
@@ -290,8 +297,8 @@ function startFunc() { setTime();
                 clearBtn.onclick=function() {
                     yourScore.innerHTML="The highest score has been cleared!"
                     localStorage.setItem("hiSc", 0);
-                }    } 
-}       }         
+                }    
+    }   }       }               
         
 
 function setTime() {

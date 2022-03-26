@@ -8,9 +8,9 @@ to those created elements in js.
 -- A better way is possible by using jQUERY or Boostrap, but only
 fucusing on using java script.
 
--- During the test, a few very interesting problems occurred. The codes
-could run without problem didn't run properly after sometimes. After shut
-down my labtop, then trying again, it worked again. Looked up to the internet
-but couldn't find any answer.
+-- This has been the third version. The previous two were working
+before pushed to github, then they didn't work all the way, stopping at
+the 2nd last page. They were all tested fine without any problem on
+my laptop on google chrome brower.No error was shown on console.
 
  	
